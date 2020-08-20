@@ -339,6 +339,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 55, 56, 57, 58, 59 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 1 ],
+"method": "change_state"
+} ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "RollLeft"
@@ -354,6 +368,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 50, 51, 52, 53, 54 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 1 ],
+"method": "change_state"
+} ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -371,6 +399,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 40, 41, 42, 43, 44 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 1 ],
+"method": "change_state"
+} ]
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "RollUp"
@@ -386,6 +428,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 45, 46, 47, 48, 49 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 1 ],
+"method": "change_state"
+} ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -562,12 +618,12 @@ states/Attack/position = Vector2( 277, 316 )
 states/Idle/node = SubResource( 27 )
 states/Idle/position = Vector2( 277, 198 )
 states/Roll/node = SubResource( 32 )
-states/Roll/position = Vector2( 480, 316 )
+states/Roll/position = Vector2( 277, 88 )
 states/Run/node = SubResource( 37 )
 states/Run/position = Vector2( 480, 198 )
-transitions = [ "Idle", "Run", SubResource( 38 ), "Run", "Idle", SubResource( 39 ), "Run", "Roll", SubResource( 40 ), "Roll", "Run", SubResource( 41 ), "Idle", "Attack", SubResource( 42 ), "Attack", "Idle", SubResource( 43 ) ]
+transitions = [ "Idle", "Run", SubResource( 38 ), "Run", "Idle", SubResource( 39 ), "Idle", "Attack", SubResource( 40 ), "Attack", "Idle", SubResource( 41 ), "Idle", "Roll", SubResource( 42 ), "Roll", "Idle", SubResource( 43 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -147, 134.398 )
+graph_offset = Vector2( -147, 71.398 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=45]
 
@@ -583,11 +639,12 @@ script = ExtResource( 1 )
 position = Vector2( 0.595947, -9.6676 )
 texture = ExtResource( 2 )
 hframes = 60
-frame = 39
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackDown = SubResource( 2 )
