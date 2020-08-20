@@ -1,10 +1,11 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Assets/Scenes/Indivitual/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scenes/Indivitual/Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Sprites/World/GrassBackground.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/World/CliffTileset.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Scenes/Indivitual/Grass.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -483,7 +484,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="World" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 160, 90 )
+position = Vector2( 160, 90.2973 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 320, 180 )
@@ -491,6 +492,8 @@ region_rect = Rect2( 0, 0, 320, 180 )
 [node name="Dirt Path" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -65526, 0, 0, -65525, 0, 2, 10, 0, 65536, 11, 0, 65538, 65546, 0, 65536, 65547, 0, 65538, 131082, 0, 65536, 131083, 0, 65538, 131087, 0, 0, 131088, 0, 1, 131089, 0, 1, 131090, 0, 1, 131091, 0, 1, 131092, 0, 2, 196618, 0, 65536, 196619, 0, 131077, 196620, 0, 1, 196621, 0, 1, 196622, 0, 1, 196623, 0, 131078, 196624, 0, 65541, 196625, 0, 131073, 196626, 0, 131073, 196627, 0, 131073, 196628, 0, 131074, 327679, 0, 0, 262144, 0, 1, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262149, 0, 1, 262150, 0, 1, 262151, 0, 1, 262152, 0, 1, 262153, 0, 1, 262154, 0, 131078, 262155, 0, 65541, 262156, 0, 131073, 262157, 0, 131073, 262158, 0, 131073, 262159, 0, 131073, 262160, 0, 131074, 393215, 0, 131072, 327680, 0, 131073, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131073, 327690, 0, 65542, 327691, 0, 65538, 393226, 0, 65536, 393227, 0, 65538, 393230, 0, 196611, 458762, 0, 65536, 458763, 0, 65538, 524298, 0, 65536, 524299, 0, 131077, 524300, 0, 2, 589834, 0, 131072, 589835, 0, 65542, 589836, 0, 131077, 589837, 0, 2, 655371, 0, 65536, 655372, 0, 65537, 655373, 0, 65538, 720907, 0, 131072, 720908, 0, 131073, 720909, 0, 131074 )
 
@@ -498,6 +501,7 @@ tile_data = PoolIntArray( -65526, 0, 0, -65525, 0, 2, 10, 0, 65536, 11, 0, 65538
 tile_set = SubResource( 49 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 3, 0, 0, 4, 0, 2, 6, 0, 196608, 7, 0, 6, 8, 0, 1, 9, 0, 2, 65537, 0, 196608, 65538, 0, 196609, 65539, 0, 196614, 65540, 0, 131074, 65543, 0, 65536, 65544, 0, 65537, 65545, 0, 65538, 131079, 0, 131072, 131080, 0, 131073, 131081, 0, 131074, 262145, 0, 0, 262146, 0, 1, 262147, 0, 2, 262153, 0, 3, 327680, 0, 196608, 327681, 0, 196614, 327682, 0, 131073, 327683, 0, 131074, 327687, 0, 196608, 327688, 0, 196609, 327689, 0, 196615 )
 
@@ -522,3 +526,23 @@ position = Vector2( 34.9931, 163.665 )
 
 [node name="Bush" parent="Environment/Bush6" instance=ExtResource( 2 )]
 position = Vector2( 18.1981, 19.7805 )
+
+[node name="Grass" type="YSort" parent="Environment"]
+
+[node name="Grass" parent="Environment/Grass" instance=ExtResource( 6 )]
+position = Vector2( 59.242, 86.9142 )
+
+[node name="Grass2" parent="Environment/Grass" instance=ExtResource( 6 )]
+position = Vector2( 274.489, 62.7504 )
+
+[node name="Grass3" parent="Environment/Grass" instance=ExtResource( 6 )]
+position = Vector2( 209.659, 129.2 )
+
+[node name="Grass4" parent="Environment/Grass" instance=ExtResource( 6 )]
+position = Vector2( 191.191, 79.9971 )
+
+[node name="Grass5" parent="Environment/Grass" instance=ExtResource( 6 )]
+position = Vector2( 213.096, 121.385 )
+
+[node name="Grass6" parent="Environment/Grass" instance=ExtResource( 6 )]
+position = Vector2( 219.107, 129.55 )
