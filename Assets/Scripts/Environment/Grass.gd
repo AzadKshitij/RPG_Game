@@ -1,12 +1,11 @@
 extends Node2D
-onready var GrassEffect = load("res://Assets/Scenes/Indivitual/Effacts/GrassEffect.tscn")
+const GrassEffect = preload("res://Assets/Scenes/Indivitual/Effacts/GrassEffect.tscn")
 
 func instantiate_grass_effect():
 	var grassEffect = GrassEffect.instance()
-	var world = get_tree().current_scene
-	world.add_child(grassEffect)
+	get_parent().add_child(grassEffect)
 	grassEffect.global_position = global_position
 
-func _on_HurtBox_area_entered(area):
+func _on_HurtBox_area_entered(_area):
 	instantiate_grass_effect()
 	queue_free()
